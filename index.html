@@ -34,7 +34,7 @@
                             <label class="label" for="nach">Versandkosten nach Europa</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="nach" min="0" step="any">
+                            <input type="number" id="nach" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="nach" class="currency-sign">€</label>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <label class="label" for="qi">Quality Inspection</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="qi" min="0" step="any">
+                            <input type="number" id="qi" min="0" step="any" onkeyup="_get_updated(event)">
                         </div>
                     </div>
 
@@ -88,19 +88,10 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Einkaufspreis pro Einheit</span>
+                            <span class="normal-label">Einkaufspreis pro Produkt (Netto)</span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="einheit-r">0</span>
-                            <span class="currency-sign">€</span>
-                        </div>
-                    </div>
-                    <div class="page-main-row">
-                        <div class="page-main-column">
-                            <span class="normal-label">EUSt pro Einheit</span>
-                        </div>
-                        <div class="page-main-column">
-                            <span class="normal-value" id="eust-einheit-r">0</span>
                             <span class="currency-sign">€</span>
                         </div>
                     </div>
@@ -118,16 +109,16 @@
                             <label class="label" for="zoll">Zoll</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="zoll" value="2" min="0" step="any">
+                            <input type="number" id="zoll" value="2" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="zoll" class="currency-sign">%</label>
                         </div>
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="eust">EUSt</label>
+                            <label class="label" for="eust">Mehrwertsteuersatz</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="eust" value="19" min="0" step="any">
+                            <input type="number" id="eust" value="19" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="eust" class="currency-sign">%</label>
                         </div>
                     </div>
@@ -139,7 +130,7 @@
                             <label class="label" for="produk">Produkteinheiten</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="produk" min="0" step="any">
+                            <input type="number" id="produk" min="0" step="any" onkeyup="_get_updated(event)">
                         </div>
                     </div>
                 </div>
@@ -153,7 +144,6 @@
             <h1>Amazon FBA Kalkulation</h1>
         </div>
 
-
         <div class="page-main-table-row">
 
             <div class="page-main-table-column">
@@ -163,7 +153,7 @@
                             <label class="label" for="verk">Amazon Verkaufspreis</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="verk" min="0" step="any">
+                            <input type="number" id="verk" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="verk" class="currency-sign">€</label>
                         </div>
                     </div>
@@ -174,6 +164,16 @@
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="enthaltene">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Netto Verkaufspreis</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="netto">0</span>
                             <span class="currency-sign">€</span>
                         </div>
                     </div>
@@ -199,26 +199,17 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Einkaufspreis Produkt</span>
+                            <span class="normal-label">Einkaufspreis Produkt (Netto)</span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="spreis">0</span>
                             <span class="currency-sign">€</span>
                         </div>
                     </div>
-                    <div class="page-main-row">
-                        <div class="page-main-column">
-                            <span class="normal-label">Differenz MwSt-EUSt pro Einheit</span>
-                        </div>
-                        <div class="page-main-column">
-                            <span class="normal-value" id="differenz">0</span>
-                            <span class="currency-sign">€</span>
-                        </div>
-                    </div>
 
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <span class="normal-label">Erlöse - Retourenquote (Pauschal 10%)</span>
+                            <span class="normal-label">Nettogewinn - Retourenquote (Pauschal 10%)</span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="retour">0</span>
@@ -237,7 +228,7 @@
                             <label class="label" for="verkauf">Amazon Verkaufsgebühren</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="verkauf" value="15" min="0" step="any">
+                            <input type="number" id="verkauf" value="15" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="verkauf" class="currency-sign">%</label>
                         </div>
                     </div>
@@ -246,7 +237,7 @@
                             <label class="label" for="versand">Amazon Versandkosten</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="versand" value="5" min="0" step="any">
+                            <input type="number" id="versand" value="5" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="versand" class="currency-sign">€</label>
                         </div>
                     </div>
@@ -254,10 +245,121 @@
 
             </div>
 
-
         </div>
 
     </div>
+
+
+
+    
+    <div class="page-main">
+        <div class="page-main-title">
+            <h1>Gewinn pro Monat</h1>
+        </div>
+
+        <div class="page-main-table-row">
+            <div class="page-main-table-column">
+                <div class="page-main-table">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="amtag">Verkäufe am Tag</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="amtag" min="0" step="any" onkeyup="_get_updated(event)">
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Verkäufe im Monat (30 Tage)</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="immonat">0</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Nettogewinn pro Monat</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="promonat">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-main-table-column"></div>
+        </div>
+    </div>
+
+    
+    <div class="page-main">
+        <div class="page-main-title">
+            <h1>Variable Kosten Monat</h1>
+        </div>
+
+        <div class="page-main-table-row">
+            <div class="page-main-table-column">
+                <div class="page-main-table p-m-r-space-top">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Nettogewinn pro Monat</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="promonat2">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <input type="text" id="var-kosten-1" placeholder="Variable Kosten 1">
+                        </div>
+                        <div class="page-main-column">
+                            <input type="text" value="200" id="var-kosten-i-1" onkeyup="_get_updated(event)">
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <input type="text" id="var-kosten-2" placeholder="Variable Kosten 2">
+                        </div>
+                        <div class="page-main-column">
+                            <input type="text" value="500" id="var-kosten-i-2" onkeyup="_get_updated(event)">
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <input type="text" id="var-kosten-3" placeholder="Variable Kosten 3">
+                        </div>
+                        <div class="page-main-column">
+                            <input type="text" value="10" id="var-kosten-i-3" onkeyup="_get_updated(event)">
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <input type="text" id="var-kosten-4" placeholder="Variable Kosten 4">
+                        </div>
+                        <div class="page-main-column">
+                            <input type="text" value="40" id="var-kosten-i-4" onkeyup="_get_updated(event)">
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Nettogewinn nach Variablen Kosten</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="nettogewinn">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-main-table-column"></div>
+        </div>
+    </div>
+
 
     <script src="dist/calculations.dev.js"></script>
 

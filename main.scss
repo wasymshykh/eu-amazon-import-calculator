@@ -142,6 +142,27 @@ $golden-color: rgb(174, 149, 92);
     padding-right: 1em;
 }
 
+.page-main-column.make-red {
+    background-color: rgb(167, 44, 44);
+}
+.page-main-column.make-green {
+    background-color: rgb(0, 145, 48);
+}
+.page-main-column.make-green .normal-value,
+.page-main-column.make-red .normal-value {
+    color: #ffffff;
+}
+.page-main-column.make-green .currency-sign,
+.page-main-column.make-green .currency-sign {
+    color: #ffffff;
+}
+.page-main-column.make-green:hover {
+    background-color: rgb(0, 133, 44);
+}
+.page-main-column.make-red:hover {
+    background-color: rgb(145, 35, 35);
+}
+
 .p-m-r-space-top {
     margin-top: 2em;
     border-top: 1px solid rgba(255, 255, 255, 0.2);

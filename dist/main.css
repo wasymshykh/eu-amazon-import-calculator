@@ -143,6 +143,32 @@ body {
   padding-right: 1em;
 }
 
+.page-main-column.make-red {
+  background-color: #a72c2c;
+}
+
+.page-main-column.make-green {
+  background-color: #009130;
+}
+
+.page-main-column.make-green .normal-value,
+.page-main-column.make-red .normal-value {
+  color: #ffffff;
+}
+
+.page-main-column.make-green .currency-sign,
+.page-main-column.make-green .currency-sign {
+  color: #ffffff;
+}
+
+.page-main-column.make-green:hover {
+  background-color: #00852c;
+}
+
+.page-main-column.make-red:hover {
+  background-color: #912323;
+}
+
 .p-m-r-space-top {
   margin-top: 2em;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
