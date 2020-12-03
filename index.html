@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/main.css">
+
+</head>
+<body>
+    
+    <div class="page-main">
+        <div class="page-main-title">
+            <h1>Warenimport</h1>
+        </div>
+        <div class="page-main-table-row">
+            <div class="page-main-table-column">
+
+                <div class="page-main-table">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="gesamt">Warenwert Gesamt</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="gesamt" min="0" step="any">
+                            <label for="gesamt" class="currency-sign">€</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="nach">Versandkosten nach Europa</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="nach" min="0" step="any">
+                            <label for="nach" class="currency-sign">€</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Zollwert</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="zollwert">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Zoll</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="zoll-r">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">EUSt</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="eust-r">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <label class="label" for="qi">Quality Inspection</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="qi" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Einkaufspreis Gesamt</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gesamt-r">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Einkaufspreis pro Einheit</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="einheit-r">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">EUSt pro Einheit</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="eust-einheit-r">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="page-main-table-column">
+                <div class="page-main-table">
+                    <div class="page-main-row-title">
+                        <h3>Konfiguration</h3>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="zoll">Zoll</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="zoll" value="10" min="0" step="any">
+                            <label for="zoll" class="currency-sign">%</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="eust">EUSt</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="eust" value="19" min="0" step="any">
+                            <label for="eust" class="currency-sign">%</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-main-table produk-space-top">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="produk">Produkteinheiten</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="produk" min="0" step="any">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="page-main">
+        <div class="page-main-title">
+            <h1>Amazon FBA Kalkulation</h1>
+        </div>
+
+
+        <div class="page-main-table-row">
+
+            <div class="page-main-table-column">
+                <div class="page-main-table">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="verk">Amazon Verkaufspreis</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="verk" min="0" step="any">
+                            <label for="verk" class="currency-sign">€</label>
+                        </div>
+                    </div>
+
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Enthaltene Mehrwertsteuer</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="enthaltene">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Amazon Verkaufsgebühren</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gebuhren">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Amazon Versandkosten</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gebuhren">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Einkaufspreis Produkt</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gebuhren">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Differenz MwSt-EUSt pro Einheit</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gebuhren">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Erlöse - Retourenquote (Pauschal 10%)</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="gebuhren">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-main-table-column">
+
+                <div class="page-main-table">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="verkauf">Amazon Verkaufsgebühren</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="verkauf" value="15" min="0" step="any">
+                            <label for="verkauf" class="currency-sign">%</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="versand">Amazon Versandkosten</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="versand" value="5" min="0" step="any">
+                            <label for="versand" class="currency-sign">€</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
