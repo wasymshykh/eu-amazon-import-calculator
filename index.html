@@ -25,7 +25,7 @@
                             <label class="label" for="gesamt">Warenwert Gesamt</label>
                         </div>
                         <div class="page-main-column">
-                            <input type="number" id="gesamt" min="0" step="any">
+                            <input type="number" id="gesamt" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="gesamt" class="currency-sign">€</label>
                         </div>
                     </div>
@@ -147,8 +147,6 @@
             </div>
         </div>
     </div>
-
-
     
     <div class="page-main">
         <div class="page-main-title">
@@ -260,6 +258,8 @@
         </div>
 
     </div>
+
+    <script src="dist/calculations.dev.js"></script>
 
 </body>
 </html>
