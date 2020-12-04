@@ -46,6 +46,8 @@ var i_verk = _s("#verk");
 var i_verkauf = _s("#verkauf");
 
 var i_versand = _s("#versand");
+
+var i_touren = _s("#touren");
 /* Selecting Text - for amazon */
 
 
@@ -60,6 +62,8 @@ var t_kosten = _s("#kosten");
 var t_spreis = _s("#spreis");
 
 var t_retour = _s("#retour");
+
+var t_nachretour = _s("#nachretour");
 /* Selecting Inputs - for gewinn */
 
 
@@ -146,14 +150,19 @@ var _update_warenimport = function _update_warenimport() {
 
   t_kosten.textContent = _ro(value_iversand);
   t_spreis.textContent = _ro(value_teinheitr);
-  var value_retour = (value_tnetto - value_gebuhren - _c(i_versand.value) - value_teinheitr) * 0.9;
+  var value_retour = value_tnetto - value_gebuhren - _c(i_versand.value) - value_teinheitr;
   t_retour.textContent = _ro(value_retour);
+
+  var value_itouren = _c(i_touren.value);
+
+  var value_tnachretour = value_retour - value_retour * value_itouren / 100;
+  t_nachretour.textContent = _ro(value_tnachretour);
 
   var value_iamtag = _c(i_amtag.value);
 
   var value_immonat = value_iamtag * 30;
   t_immonat.textContent = _ro(value_immonat);
-  var value_promonat = value_iamtag * value_retour * 30;
+  var value_promonat = value_iamtag * value_tnachretour * 30;
   t_promonat.textContent = _ro(value_promonat);
   t_promonat2.textContent = _ro(value_promonat);
 

@@ -209,10 +209,20 @@
 
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <span class="normal-label">Nettogewinn - Retourenquote (Pauschal 10%)</span>
+                            <span class="normal-label">Nettogewinn</span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="retour">0</span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+
+                    <div class="page-main-row p-m-r-space-top">
+                        <div class="page-main-column">
+                            <span class="normal-label">Nettogewinn nach Retourenpauschale</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="nachretour">0</span>
                             <span class="currency-sign">€</span>
                         </div>
                     </div>
@@ -239,6 +249,15 @@
                         <div class="page-main-column">
                             <input type="number" id="versand" value="5" min="0" step="any" onkeyup="_get_updated(event)">
                             <label for="versand" class="currency-sign">€</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="touren">Retourenpauschale</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="touren" value="15" min="0" step="any" onkeyup="_get_updated(event)">
+                            <label for="touren" class="currency-sign">%</label>
                         </div>
                     </div>
                 </div>

@@ -39,6 +39,7 @@ const t_einheit_r = _s("#einheit-r");
 const i_verk = _s("#verk");
 const i_verkauf = _s("#verkauf");
 const i_versand = _s("#versand");
+const i_touren = _s("#touren");
 
 /* Selecting Text - for amazon */
 
@@ -48,6 +49,7 @@ const t_gebuhren = _s("#gebuhren");
 const t_kosten = _s("#kosten");
 const t_spreis = _s("#spreis");
 const t_retour = _s("#retour");
+const t_nachretour = _s("#nachretour");
 
 /* Selecting Inputs - for gewinn */
 
@@ -129,16 +131,19 @@ const _update_warenimport = () => {
 
     t_spreis.textContent = _ro(value_teinheitr);
 
-    let value_retour = (value_tnetto - value_gebuhren - _c(i_versand.value) - value_teinheitr)*0.9;
+    let value_retour = (value_tnetto - value_gebuhren - _c(i_versand.value) - value_teinheitr);
     t_retour.textContent = _ro(value_retour);
 
+    let value_itouren = _c(i_touren.value);
+    let value_tnachretour = value_retour - (value_retour*value_itouren/100);
+    t_nachretour.textContent = _ro(value_tnachretour);
     
     let value_iamtag = _c(i_amtag.value);
 
     let value_immonat = value_iamtag *30;
     t_immonat.textContent = _ro(value_immonat);
 
-    let value_promonat = value_iamtag*value_retour*30;
+    let value_promonat = value_iamtag*value_tnachretour*30;
     t_promonat.textContent = _ro(value_promonat);
     t_promonat2.textContent = _ro(value_promonat);
 
