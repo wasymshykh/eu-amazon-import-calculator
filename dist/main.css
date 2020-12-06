@@ -41,6 +41,12 @@ body {
 .page-main-table-column:nth-child(2) {
   flex: 2;
   margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex: 1;
 }
 
 .page-main-row-title {
@@ -66,6 +72,7 @@ body {
 .page-main-row {
   display: flex;
   align-items: center;
+  background-color: transparent;
 }
 
 .page-main-column {
@@ -84,7 +91,7 @@ body {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.page-main-row:hover .page-main-column {
+.page-main-row:hover {
   background-color: rgba(255, 255, 255, 0.01);
 }
 
@@ -144,7 +151,7 @@ body {
 }
 
 .page-main-column.make-red {
-  background-color: #a72c2c;
+  background-color: #d23d02;
 }
 
 .page-main-column.make-green {
@@ -152,7 +159,9 @@ body {
 }
 
 .page-main-column.make-green .normal-value,
-.page-main-column.make-red .normal-value {
+.page-main-column.make-red .normal-value,
+.page-main-column.make-green .currency-sign,
+.page-main-column.make-red .currency-sign {
   color: #ffffff;
 }
 
@@ -166,7 +175,7 @@ body {
 }
 
 .page-main-column.make-red:hover {
-  background-color: #912323;
+  background-color: #b83400;
 }
 
 .p-m-r-space-top {
@@ -174,6 +183,60 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.produk-space-top {
-  margin-top: 19em;
+.p-m-t-b-space {
+  margin-bottom: 1em;
+}
+
+.more-info {
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+  position: relative;
+  background-image: url(./question-mark.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: 0.4em;
+}
+
+.more-info:hover .more-info-content {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.more-info-content {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.4em 0.8em;
+  min-width: 190px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  opacity: 0;
+  transition: 0.2s all;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.more-info-content > * {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .page-main-table-row {
+    flex-direction: column;
+  }
+
+  .page-main-table-column:nth-child(2) {
+    margin-top: 1em;
+    margin-left: 0;
+  }
+
+  .produk-space-top {
+    margin-top: 1em;
+  }
 }

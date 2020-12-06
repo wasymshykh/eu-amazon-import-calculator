@@ -66,10 +66,23 @@ const t_promonat = _s("#promonat");
 const t_promonat2 = _s("#promonat2");
 const t_nettogewinn = _s("#nettogewinn");
 
+/* Selecting Inputs - for bestellmenge plannen */
+
+const i_pdptage = _s("#pdptage");
+const i_vndtage = _s("#vndtage");
+const i_valtage = _s("#valtage");
+const i_vptag = _s("#vptag");
+
+/* Selecting Text - for bestellmenge plannen */
+
+const t_outofstock = _s("#outofstock");
+const t_empfohmind = _s("#empfohmind");
+const t_empfohsich = _s("#empfohsich");
+
+
 /* Event Listener */
 
 const calulate_percentage = (b25, b13) => {
-
     if (((b25/b13) * 100) > 90) {
         // b25 is higher than 90%
         t_retour.parentElement.classList.add('make-green');
@@ -79,13 +92,22 @@ const calulate_percentage = (b25, b13) => {
         t_retour.parentElement.classList.add('make-red');
         t_retour.parentElement.classList.remove('make-green');
     }
-    console.log();
+}
+
+const calulate_percentage_more = (b26, b13) => {
+    if (((b26/b13) * 100) > 90) {
+        // b26 is higher than 90%
+        t_nachretour.parentElement.classList.add('make-green');
+        t_nachretour.parentElement.classList.remove('make-red');
+    } else {
+        // b26 is lower than 90%
+        t_nachretour.parentElement.classList.add('make-red');
+        t_nachretour.parentElement.classList.remove('make-green');
+    }
 }
 
 const _get_updated = (e) => {
-    
     _update_warenimport();
-
 }
 
 const _update_warenimport = () => {
@@ -157,9 +179,36 @@ const _update_warenimport = () => {
     t_nettogewinn.textContent = _ro(value_nettogewinn);
 
     calulate_percentage(value_retour, value_teinheitr);
-
+    calulate_percentage_more(value_tnachretour, value_teinheitr);
 }
-
 _update_warenimport();
 
 
+const _get_updated_more = (e) => {
+    let value_pdptage = _c(i_pdptage.value);
+    let value_vndtage = _c(i_vndtage.value);
+    let value_valtage = _c(i_valtage.value);
+    let value_vptag = _c(i_vptag.value);
+    
+    let value_outofstock = (value_pdptage+value_vndtage+value_valtage)*value_vptag;
+    t_outofstock.textContent = _ro(value_outofstock);
+
+    t_empfohmind.textContent = _ro(value_outofstock*1.5);
+    t_empfohsich.textContent = _ro(value_outofstock*1.8);
+}
+_get_updated_more();
+
+
+const i_wechusd = _s("#wechusd");
+const i_wertdollar = _s("#wertdollar");
+const t_werteuro = _s("#werteuro");
+
+const _get_exchanged = (e) => {
+    let value_wechusd = _c(i_wechusd.value);
+    let value_wertdollar = _c(i_wertdollar.value);
+
+    let value_werteuro = value_wechusd * value_wertdollar;
+    t_werteuro.textContent = _ro(value_werteuro);
+}
+
+_get_exchanged();

@@ -22,7 +22,9 @@
                 <div class="page-main-table">
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="gesamt">Warenwert Gesamt</label>
+                            <label class="label" for="gesamt">
+                                Warenwert Gesamt
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="gesamt" min="0" step="any" onkeyup="_get_updated(event)">
@@ -31,7 +33,9 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="nach">Versandkosten nach Europa</label>
+                            <label class="label" for="nach">
+                                Versandkosten nach Europa
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="nach" min="0" step="any" onkeyup="_get_updated(event)">
@@ -40,7 +44,9 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Zollwert</span>
+                            <span class="normal-label">
+                                Zollwert
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="zollwert">0</span>
@@ -50,7 +56,7 @@
 
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <span class="normal-label">Zoll</span>
+                            <span class="normal-label">Zollgebühren</span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="zoll-r">0</span>
@@ -59,7 +65,13 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">EUSt</span>
+                            <span class="normal-label">EUSt
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Die Einfuhrumsatzsteuer kannst Du als Vorsteuer geltend machen und bekommst diese zurück.
+                                    </div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="eust-r">0</span>
@@ -70,7 +82,7 @@
 
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <label class="label" for="qi">Quality Inspection</label>
+                            <label class="label" for="qi">Wareninspektion</label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="qi" min="0" step="any" onkeyup="_get_updated(event)">
@@ -88,25 +100,79 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Einkaufspreis pro Produkt (Netto)</span>
+                            <span class="normal-label">Einkaufspreis pro Produkt (Netto)
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Der Netto Einkaufspreis ist ohne Mehrwertsteuer.
+                                    </div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="einheit-r">0</span>
                             <span class="currency-sign">€</span>
                         </div>
                     </div>
+                </div>
+            </div>
 
+            <div class="page-main-table-column">
+
+                <div class="page-main-table p-m-t-b-space">
+                    <div class="page-main-row-title">
+                        <h3>Wechselkursrechner</h3>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="wechusd">
+                                Wechselkurs US- Dollar in Euro
+
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Hier kannst du den aktuellen Wechselkurs sehen: <a href="https://www.google.com/search?ei=3Z3LX4nFM4mQlwSj-qLgCg&q=Wechselkurs+Dollar+Euro&oq=Wechselkurs+Dollar+Euro&gs_lcp=CgZwc3ktYWIQAzIHCAAQRhCCAjIECAAQQzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQILhBDOgkIABBDEEYQggI6BwgAEEYQ_wFQtdICWKaxCGD1sghoDXABeACAAWSIAZMTkgEEMzAuMZgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwjJp-mMi7ftAhUJyIUKHSO9CKwQ4dUDCA0&uact=5" target="_blank">hier klicken</a>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="wechusd" value="0.85" min="0" step="any" onkeyup="_get_exchanged(event)">
+                            <label for="wechusd" class="currency-sign">$</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="wertdollar">Wert Dollar</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="wertdollar" value="" min="0" step="any" onkeyup="_get_exchanged(event)">
+                            <label for="wertdollar" class="currency-sign">$</label>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Wert Euro</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="werteuro"></span>
+                            <span class="currency-sign">€</span>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-            <div class="page-main-table-column">
+
                 <div class="page-main-table">
                     <div class="page-main-row-title">
                         <h3>Konfiguration</h3>
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="zoll">Zoll</label>
+                            <label class="label" for="zoll">Zoll
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Hier kommt der Prozentsatz der Zolltarifnummer (HS Code) rein. Dein Hersteller müsste ihn Dir genannt haben. Ansonsten kannstDu den Zoll anrufen, oder selber recherchieren: <a href="https://www.zolltarifnummern.de/" target="_blank">hier klicken</a>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="zoll" value="2" min="0" step="any" onkeyup="_get_updated(event)">
@@ -123,6 +189,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="spacer"></div>
 
                 <div class="page-main-table produk-space-top">
                     <div class="page-main-row">
@@ -170,7 +238,13 @@
 
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Netto Verkaufspreis</span>
+                            <span class="normal-label">Netto Verkaufspreis
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Die Mehrwertsteuer wird mit der gezahlten Vorsteuer verrechnet und an das Finanzamt abgeführt.
+                                    </div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="netto">0</span>
@@ -209,7 +283,11 @@
 
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <span class="normal-label">Nettogewinn</span>
+                            <span class="normal-label">Nettogewinn
+                                <div class="more-info">
+                                    <div class="more-info-content">Du solltest einen Nettogewinn anstreben, der mindestens 90% Deines Einkaufspreises entspricht.</div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="retour">0</span>
@@ -217,9 +295,13 @@
                         </div>
                     </div>
 
-                    <div class="page-main-row p-m-r-space-top">
+                    <div class="page-main-row">
                         <div class="page-main-column">
-                            <span class="normal-label">Nettogewinn nach Retourenpauschale</span>
+                            <span class="normal-label">Nettogewinn nach Retourenpauschale
+                                <div class="more-info">
+                                    <div class="more-info-content">Du solltest einen Nettogewinn anstreben, der mindestens 90% Deines Einkaufspreises entspricht.</div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="nachretour">0</span>
@@ -235,7 +317,15 @@
                 <div class="page-main-table">
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="verkauf">Amazon Verkaufsgebühren</label>
+                            <label class="label" for="verkauf">Amazon Verkaufsgebühren
+                                
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Die Verkaufsgebühren variieren je nach Kategorie, hier kannst Du es überprüfen:
+                                        <a href="https://sellercentral.amazon.de/gp/help/help.html?itemID=GYND54PM5WB84UM&language=de_DE&ref=ag_GYND54PM5WB84UM_cont_200336920" target="_blank">hier klicken</a>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="verkauf" value="15" min="0" step="any" onkeyup="_get_updated(event)">
@@ -244,7 +334,13 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="versand">Amazon Versandkosten</label>
+                            <label class="label" for="versand">Amazon Versandkosten
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Wenn Du in Deutschland lagerst, achte darauf, dass Du die Preise aus der dritten Zeile nimmst: <a href="https://m.media-amazon.com/images/G/02/FBA_Files/200828-FBA-Rate-Card-DE.pdf?ld=NSGoogle&initialSessionID=NSGoogle" target="_blank">hier klicken</a>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="versand" value="5" min="0" step="any" onkeyup="_get_updated(event)">
@@ -253,7 +349,13 @@
                     </div>
                     <div class="page-main-row">
                         <div class="page-main-column">
-                            <label class="label" for="touren">Retourenpauschale</label>
+                            <label class="label" for="touren">Retourenpauschale
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Es ist am Anfang sehr schwer zu kalkulieren, wie hoch die Gebühren der Retouren für Dich werden. Ich würde immer mit 10% kalkulieren.
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                         <div class="page-main-column">
                             <input type="number" id="touren" value="15" min="0" step="any" onkeyup="_get_updated(event)">
@@ -267,9 +369,6 @@
         </div>
 
     </div>
-
-
-
     
     <div class="page-main">
         <div class="page-main-title">
@@ -310,7 +409,6 @@
         </div>
     </div>
 
-    
     <div class="page-main">
         <div class="page-main-title">
             <h1>Variable Kosten Monat</h1>
@@ -318,7 +416,7 @@
 
         <div class="page-main-table-row">
             <div class="page-main-table-column">
-                <div class="page-main-table p-m-r-space-top">
+                <div class="page-main-table">
                     <div class="page-main-row">
                         <div class="page-main-column">
                             <span class="normal-label">Nettogewinn pro Monat</span>
@@ -366,11 +464,107 @@
                     </div>
                     <div class="page-main-row p-m-r-space-top">
                         <div class="page-main-column">
-                            <span class="normal-label">Nettogewinn nach Variablen Kosten</span>
+                            <span class="normal-label">Nettogewinn nach variablen Kosten
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Hier kannst du Gebühren eintragen, die oben nicht aufgeführt sind, z.B. die Lagergebühren von Amazon, oder des Logistikers. Die Amazon Lagergebühren findest Du hier: <a href="https://services.amazon.de/programme/versand-durch-amazon/preisgestaltung.html" target="_blank">hier klicken</a>
+                                    </div>
+                                </div>
+                            </span>
                         </div>
                         <div class="page-main-column">
                             <span class="normal-value" id="nettogewinn">0</span>
                             <span class="currency-sign">€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-main-table-column"></div>
+        </div>
+    </div>
+
+
+    <div class="page-main">
+        <div class="page-main-title">
+            <h1>Bestellmenge planen</h1>
+        </div>
+
+        <div class="page-main-table-row">
+            <div class="page-main-table-column">
+                <div class="page-main-table">
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="pdptage">Produktion der Produkte (Tage)</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="pdptage" min="0" step="any" value="30" onkeyup="_get_updated_more(event)">
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="vndtage">Versand nach Deutschland (Tage)</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="vndtage" min="0" step="any" value="10" onkeyup="_get_updated_more(event)">
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="valtage">Versand Amazon Lager (Tage)
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Ich würde hier mit 7 Tagen kalkulieren
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="valtage" min="0" step="any" value="7" onkeyup="_get_updated_more(event)">
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <label class="label" for="vptag">Verkäufe pro Tag</label>
+                        </div>
+                        <div class="page-main-column">
+                            <input type="number" id="vptag" min="0" step="any" value="10" onkeyup="_get_updated_more(event)">
+                        </div>
+                    </div>
+
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Verkäufe bis out of stock</span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="outofstock">0</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Empfohlene Bestellmenge (Mindestens)
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Sobald Du mit dem Produktlaunch startest solltest Du nachbestellen.
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="empfohmind">0</span>
+                        </div>
+                    </div>
+                    <div class="page-main-row">
+                        <div class="page-main-column">
+                            <span class="normal-label">Empfohlene Bestellmenge (Sicherer)
+                                <div class="more-info">
+                                    <div class="more-info-content">
+                                        Hier solltest Du ebenfalls nicht zu lange mit der Nachbestellung warten.
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="page-main-column">
+                            <span class="normal-value" id="empfohsich">0</span>
                         </div>
                     </div>
                 </div>
