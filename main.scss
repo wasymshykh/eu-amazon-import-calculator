@@ -138,6 +138,11 @@ $golden-color: rgb(174, 149, 92);
 .page-main-column input[type=number] {
     -moz-appearance: textfield;
 }
+.page-main-column input::-webkit-outer-spin-button,
+.page-main-column input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .normal-value {
     font-size: 1.2em;

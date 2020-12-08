@@ -141,6 +141,12 @@ body {
   -moz-appearance: textfield;
 }
 
+.page-main-column input::-webkit-outer-spin-button,
+.page-main-column input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .normal-value {
   font-size: 1.2em;
   font-weight: 700;

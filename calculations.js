@@ -50,6 +50,7 @@ const t_kosten = _s("#kosten");
 const t_spreis = _s("#spreis");
 const t_retour = _s("#retour");
 const t_nachretour = _s("#nachretour");
+const t_break = _s("#break");
 
 /* Selecting Inputs - for gewinn */
 
@@ -58,6 +59,11 @@ const i_var_kosten_1 = _s("#var-kosten-i-1");
 const i_var_kosten_2 = _s("#var-kosten-i-2");
 const i_var_kosten_3 = _s("#var-kosten-i-3");
 const i_var_kosten_4 = _s("#var-kosten-i-4");
+
+const var_kosten_1 = _s("#var-kosten-1");
+const var_kosten_2 = _s("#var-kosten-2");
+const var_kosten_3 = _s("#var-kosten-3");
+const var_kosten_4 = _s("#var-kosten-4");
 
 /* Selecting Text - for gewinn */
 
@@ -105,6 +111,114 @@ const calulate_percentage_more = (b26, b13) => {
         t_nachretour.parentElement.classList.remove('make-green');
     }
 }
+
+
+const _update_store = () => {
+    window.localStorage.setItem('gesamt', i_gesamt.value);
+    window.localStorage.setItem('nach', i_nach.value);
+    window.localStorage.setItem('qi', i_qi.value);
+    window.localStorage.setItem('zoll', i_zoll.value);
+    window.localStorage.setItem('eust', i_eust.value);
+    window.localStorage.setItem('produk', i_produk.value);
+
+    window.localStorage.setItem('verk', i_verk.value);
+    window.localStorage.setItem('verkauf', i_verkauf.value);
+    window.localStorage.setItem('versand', i_versand.value);
+    window.localStorage.setItem('touren', i_touren.value);
+
+    window.localStorage.setItem('amtag', i_amtag.value);
+    window.localStorage.setItem('var-kosten-1', var_kosten_1.value);
+    window.localStorage.setItem('var-kosten-2', var_kosten_2.value);
+    window.localStorage.setItem('var-kosten-3', var_kosten_3.value);
+    window.localStorage.setItem('var-kosten-4', var_kosten_4.value);
+
+    window.localStorage.setItem('var-kosten-i-1', i_var_kosten_1.value);
+    window.localStorage.setItem('var-kosten-i-2', i_var_kosten_2.value);
+    window.localStorage.setItem('var-kosten-i-3', i_var_kosten_3.value);
+    window.localStorage.setItem('var-kosten-i-4', i_var_kosten_4.value);
+
+    window.localStorage.setItem('pdptage', i_pdptage.value);
+    window.localStorage.setItem('vndtage', i_vndtage.value);
+    window.localStorage.setItem('valtage', i_valtage.value);
+    window.localStorage.setItem('vptag', i_vptag.value);
+}
+
+
+const _get_store_data = () => {
+    if (window.localStorage.getItem('gesamt') !== null) {
+        i_gesamt.value = window.localStorage.getItem('gesamt');
+    }
+    if (window.localStorage.getItem('nach') !== null) {
+        i_nach.value = window.localStorage.getItem('nach');
+    }
+    if (window.localStorage.getItem('qi') !== null) {
+        i_qi.value = window.localStorage.getItem('qi');
+    }
+    if (window.localStorage.getItem('zoll') !== null) {
+        i_zoll.value = window.localStorage.getItem('zoll');
+    }
+    if (window.localStorage.getItem('eust') !== null) {
+        i_eust.value = window.localStorage.getItem('eust');
+    }
+    if (window.localStorage.getItem('produk') !== null) {
+        i_produk.value = window.localStorage.getItem('produk');
+    }
+    if (window.localStorage.getItem('verk') !== null) {
+        i_verk.value = window.localStorage.getItem('verk');
+    }
+    if (window.localStorage.getItem('verkauf') !== null) {
+        i_verkauf.value = window.localStorage.getItem('verkauf');
+    }
+    if (window.localStorage.getItem('versand') !== null) {
+        i_versand.value = window.localStorage.getItem('versand');
+    }
+    if (window.localStorage.getItem('touren') !== null) {
+        i_touren.value = window.localStorage.getItem('touren');
+    }
+    if (window.localStorage.getItem('amtag') !== null) {
+        i_amtag.value = window.localStorage.getItem('amtag');
+    }
+
+    if (window.localStorage.getItem('var-kosten-1') !== null) {
+        var_kosten_1.value = window.localStorage.getItem('var-kosten-1');
+    }
+    if (window.localStorage.getItem('var-kosten-2') !== null) {
+        var_kosten_2.value = window.localStorage.getItem('var-kosten-2');
+    }
+    if (window.localStorage.getItem('var-kosten-3') !== null) {
+        var_kosten_3.value = window.localStorage.getItem('var-kosten-3');
+    }
+    if (window.localStorage.getItem('var-kosten-4') !== null) {
+        var_kosten_4.value = window.localStorage.getItem('var-kosten-4');
+    }
+
+    if (window.localStorage.getItem('var-kosten-i-1') !== null) {
+        i_var_kosten_1.value = window.localStorage.getItem('var-kosten-i-1');
+    }
+    if (window.localStorage.getItem('var-kosten-i-2') !== null) {
+        i_var_kosten_2.value = window.localStorage.getItem('var-kosten-i-2');
+    }
+    if (window.localStorage.getItem('var-kosten-i-3') !== null) {
+        i_var_kosten_3.value = window.localStorage.getItem('var-kosten-i-3');
+    }
+    if (window.localStorage.getItem('var-kosten-i-4') !== null) {
+        i_var_kosten_4.value = window.localStorage.getItem('var-kosten-i-4');
+    }
+
+    if (window.localStorage.getItem('pdptage') !== null) {
+        i_pdptage.value = window.localStorage.getItem('pdptage');
+    }
+    if (window.localStorage.getItem('vndtage') !== null) {
+        i_vndtage.value = window.localStorage.getItem('vndtage');
+    }
+    if (window.localStorage.getItem('valtage') !== null) {
+        i_valtage.value = window.localStorage.getItem('valtage');
+    }
+    if (window.localStorage.getItem('vptag') !== null) {
+        i_vptag.value = window.localStorage.getItem('vptag');
+    }
+}
+_get_store_data();
 
 const _get_updated = (e) => {
     _update_warenimport();
@@ -180,9 +294,13 @@ const _update_warenimport = () => {
 
     calulate_percentage(value_retour, value_teinheitr);
     calulate_percentage_more(value_tnachretour, value_teinheitr);
+
+    let value_tbreak = value_tnachretour / value_iverk * 100;
+    t_break.textContent = (_ro(value_tbreak) >= 0) ? _ro(value_tbreak) : 'NaN';
+
+    _update_store();
 }
 _update_warenimport();
-
 
 const _get_updated_more = (e) => {
     let value_pdptage = _c(i_pdptage.value);
@@ -195,9 +313,10 @@ const _get_updated_more = (e) => {
 
     t_empfohmind.textContent = _ro(value_outofstock*1.5);
     t_empfohsich.textContent = _ro(value_outofstock*1.8);
+
+    _update_store();
 }
 _get_updated_more();
-
 
 const i_wechusd = _s("#wechusd");
 const i_wertdollar = _s("#wertdollar");
